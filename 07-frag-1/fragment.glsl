@@ -6,9 +6,14 @@ precision highp float;
 void main() {
 
   //TODO: Replace this with a function that draws a circle at (256.5,256.5) with radius 128
+  const float radius = 128.0;
+  const float x = 256.0;
+  const float y = 256.0;
   
-  if(gl_FragCoord.y > 256.0) {
-    gl_FragColor = CIRCLE_COLOR;
+  float eqLeft = (gl_FragCoord.x - x) * (gl_FragCoord.x - x) + (gl_FragCoord.y - y) * (gl_FragCoord.y - y);
+
+  if(eqLeft < radius * radius) {
+    gl_FragColor = CIRCLE_COLOR; 
   } else {
     gl_FragColor = OUTSIDE_COLOR;
   }
