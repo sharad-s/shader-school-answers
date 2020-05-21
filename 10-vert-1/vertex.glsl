@@ -6,7 +6,7 @@ attribute vec2 position;
 
 void main() {
 
-  vec2 rotated = position.xy;
+  vec2 rotated = position;
 
   rotated.x = position.x*cos(theta) - position.y*sin(theta);
   rotated.y = position.x*sin(theta) + position.y*cos(theta);
